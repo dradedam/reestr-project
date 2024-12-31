@@ -4,6 +4,160 @@
  */
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
-const deployedContracts = {} as const;
+const deployedContracts = {
+  31337: {
+    YourContract: {
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      abi: [
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "institution",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "degree",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "string",
+              name: "major",
+              type: "string",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "graduationYear",
+              type: "uint256",
+            },
+          ],
+          name: "DiplomaAdded",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "string",
+              name: "_institution",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_degree",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_major",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "_graduationYear",
+              type: "uint256",
+            },
+          ],
+          name: "addDiploma",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+          ],
+          name: "getDiplomas",
+          outputs: [
+            {
+              components: [
+                {
+                  internalType: "string",
+                  name: "institution",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "degree",
+                  type: "string",
+                },
+                {
+                  internalType: "string",
+                  name: "major",
+                  type: "string",
+                },
+                {
+                  internalType: "uint256",
+                  name: "graduationYear",
+                  type: "uint256",
+                },
+              ],
+              internalType: "struct YourContract.Diploma[]",
+              name: "",
+              type: "tuple[]",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "_owner",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "_institution",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_degree",
+              type: "string",
+            },
+            {
+              internalType: "string",
+              name: "_major",
+              type: "string",
+            },
+            {
+              internalType: "uint256",
+              name: "_graduationYear",
+              type: "uint256",
+            },
+          ],
+          name: "hasDiploma",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {},
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;
